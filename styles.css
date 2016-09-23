@@ -13,3 +13,18 @@ input.ng-valid{
 input.ng-pristine {
   border: 1px solid grey;
 }
+
+input{
+  display: inline-block;
+}
+
+.errors{
+  display: inline-block;
+}
+
+.error{
+  font-family: comic-sans;
+  font-size: 10px;
+  display: inline-block;
+  color: red;
+}
