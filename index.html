@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="directiveMadness">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    <script src="app.js"></script>
+  </head>
+  <body>
+    <main-nav>
+    </main-nav>
+    <form>
+      <p ng-if="rval">No number is selected.</p>
+      <p></p>
+      <p></p>
+      <p></p>
+      <input name="r" type="radio" ng-model="rval">1
+      <input name="r" type="radio" ng-model="rval">2
+      <input name="r" type="radio" ng-model="rval">3
+      <input name="r" type="radio" ng-model="rval">4
+      <input name="r" type="radio" ng-model="rval">5
+    </form>
+  </body>
+</html>
