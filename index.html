@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html ng-app="directiveMadness">
   <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="app.js"></script>
     <link rel="stylesheet" href="styles.css">
@@ -17,34 +19,34 @@
 
     <!-- <p ng-mouseover="saySomething()"> mouseoverme </p> -->
 
-    <button mouse>
+    <button mouse class="btn btn-success">
       MOUSE BUTTON 
     </button>
 
     <br>
 
-    <button hover>
+    <button hover class="btn btn-danger">
       DONT HOVER ME
     </button>
     <br>
 
-    <button click>
+    <button click class="btn btn-warning">
       I'm clickable
     </button>
     
 
-    <form ng-controller="formHandler">
+    <form ng-controller="FormCtrl">
       <p ng-if="!(rval)">No number is selected.</p>
       <p ng-show="(rval % 2 === 0)">Selected Number is Even</p>
       <p ng-show="(rval % 2 === 1)">Selected Number is Odd</p>
       <p ng-hide="!(rval)">value is : {{ rval }}</p>
-      <input name="r" type="radio" value="1" ng-model="rval">1
-      <input name="r" type="radio" value="2" ng-model="rval">2
-      <input name="r" type="radio" value="3" ng-model="rval">3
-      <input name="r" type="radio" value="4" ng-model="rval">4
-      <input name="r" type="radio" value="5" ng-model="rval">5
+      <input name="r" type="radio" value="1" ng-model="rval"> 1
+      <input name="r" type="radio" value="2" ng-model="rval"> 2
+      <input name="r" type="radio" value="3" ng-model="rval"> 3
+      <input name="r" type="radio" value="4" ng-model="rval"> 4
+      <input name="r" type="radio" value="5" ng-model="rval"> 5
 
-      <button ng-click="check()"> but</button>
+      <button ng-click="check()" class="btn btn-info"> but</button>
     </form>
 
     <copyright>

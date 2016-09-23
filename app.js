@@ -1,10 +1,30 @@
 var app = angular.module('directiveMadness', []);
 
-app.controller('formHandler', ["$scope", function($scope) {
+app.controller('FormCtrl', ["$scope", function($scope) {
   
    $scope.check = function () {
     console.log($scope.rval); 
    };
+}]);
+
+app.controller('QuotesCtrl', ["$scope", function($scope) {
+  
+  
+   
+
+
+}]);
+
+app.directive('quotesIndex', [function(){
+
+  var linkCallback = function (scope, element, attributes){
+  };
+
+  return {
+    restrict: 'A',
+    scope: true,
+    link: linkCallback
+  };
 }]);
 
 app.directive('mainNav', [function(){
@@ -24,6 +44,7 @@ app.directive('mainHeader', [function(){
   };
 }]);
 
+
 app.directive('copyright', [function(){
   return {
     templateUrl: 'copyright.html',
@@ -39,8 +60,8 @@ app.directive('copyright', [function(){
 app.directive('colorize', [function(){
 
   var linkCallback = function (scope, element, attributes){
-    scope.color = 'red';
-    scope.background = 'green';
+    scope.color = '#dfe3ee';
+    scope.background = '#3b5998';
     element.css('color', scope.color);
     element.css('background-color', scope.background);
   };
