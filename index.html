@@ -15,8 +15,23 @@
 
     <p colorize>Stuff</p>
 
-    <button mouse>I'm clickable</button>
-    <!-- <p hover>DONT HOVER ME</p> -->
+    <!-- <p ng-mouseover="saySomething()"> mouseoverme </p> -->
+
+    <button mouse>
+      MOUSE BUTTON 
+    </button>
+
+    <br>
+
+    <button hover>
+      DONT HOVER ME
+    </button>
+    <br>
+
+    <button click>
+      I'm clickable
+    </button>
+    
 
     <form ng-controller="formHandler">
       <p ng-if="!(rval)">No number is selected.</p>

@@ -60,6 +60,23 @@ app.directive('colorize', [function(){
 
 app.directive('mouse', [function(){
   var linkCallback = function(scope, element, attributes) {
+    element.on('mousedown', function(){
+      element.text("HARAMBE DOWN BY SOCIETY");
+    });
+
+    element.on('mouseup', function(){
+      element.text("HARAMBE UP FROM THE GRAVE");
+    });
+  };
+
+  return {
+    restrict: 'A',
+    link: linkCallback
+  };
+}]);
+
+app.directive('click', [function(){
+  var linkCallback = function(scope, element, attributes) {
     element.on('dblclick', function(){
       element.text("I'm double clickable");
     });
@@ -74,8 +91,12 @@ app.directive('mouse', [function(){
 app.directive('hover', [function(){
 
   var linkCallback = function(scope, element, attributes) {
-    element.on('hover', function(){
+    element.on('mouseenter', function(){
+      console.log('sdfsdf');
       element.text('QUIT HOVERIN');
+    });
+    element.on('mouseleave', function(){
+      element.text('DONT HOVER ME');
     });
   };
 
