@@ -31,14 +31,9 @@ app.controller('QuotesCtrl', ["$scope", function($scope) {
 }]);
 
 app.directive('quotesIndex', [function(){
-
-  // var linkCallback = function (scope, element, attributes){
-
-  // };
-
   return {
     templateUrl: 'quote.html',
-    restrict: 'E',
+    restrict: 'A',
     scope: true
   };
 }]);

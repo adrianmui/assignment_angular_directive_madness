@@ -1,3 +1,7 @@
 .center{
   float: right;
 }
+
+input.ng-invalid{
+  border: 1px solid #F00;
+}

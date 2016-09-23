@@ -16,7 +16,7 @@
             <label>Author: </label>
           </div>
           <div class="col-xs-9">
-            <input type="text" name="author" ng-model="newQuote.author">
+            <input type="text" name="author" ng-model="newQuote.author" ng-minlength="2" ng-maxlength="32">
           </div>
         </div>
         <div class="row">
@@ -24,16 +24,25 @@
             <label>Message: </label>
           </div>
           <div class="col-xs-9">
-            <input type="text" name="message" ng-model="newQuote.message">
+            <input type="text" name="message" ng-model="newQuote.message" ng-minlength="2">
           </div>
         </div>
         <input type="submit">
       </form>
 
       <p ng-if="(quotes.length == 0)">THERE ARE NO QUOTES HERE</p>
-      <div ng-repeat="quote in quotes">
-        <quotes-index></quotes-index>
-      </div>
+      <table ng-hide="quotes.length == 0">
+        <thead>
+          <tr>
+            <th>Author</th>
+            <th>Quote</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr quotes-index ng-repeat="quote in quotes"></tr>
+        </tbody>
+      </table>
     </div>
 
     <copyright>
