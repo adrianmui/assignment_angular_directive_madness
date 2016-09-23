@@ -7,16 +7,23 @@
   <body>
     <main-nav>
     </main-nav>
-    <form>
-      <p ng-if="rval">No number is selected.</p>
-      <p></p>
-      <p></p>
-      <p></p>
-      <input name="r" type="radio" ng-model="rval">1
-      <input name="r" type="radio" ng-model="rval">2
-      <input name="r" type="radio" ng-model="rval">3
-      <input name="r" type="radio" ng-model="rval">4
-      <input name="r" type="radio" ng-model="rval">5
+
+    <main-header>
+      Morgan has a lvl 69. Charizard
+    </main-header>
+
+    <form ng-controller="formHandler">
+      <p ng-if="!(rval)">No number is selected.</p>
+      <p ng-show="(rval % 2 === 0)">Selected Number is Even</p>
+      <p ng-show="(rval % 2 === 1)">Selected Number is Odd</p>
+      <p ng-hide="!(rval)">value is : {{ rval }}</p>
+      <input name="r" type="radio" value="1" ng-model="rval">1
+      <input name="r" type="radio" value="2" ng-model="rval">2
+      <input name="r" type="radio" value="3" ng-model="rval">3
+      <input name="r" type="radio" value="4" ng-model="rval">4
+      <input name="r" type="radio" value="5" ng-model="rval">5
+
+      <button ng-click="check()"> but</button>
     </form>
   </body>
 </html>
