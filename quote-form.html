@@ -4,23 +4,21 @@
   </div>
   <div class="col-xs-9">
     <input type="text" name="author" ng-model="newQuote.author" ng-minlength="2" ng-maxlength="32" required>
-    <div>
-      <p ng-if="newQuote.author.length < 2)"> Less than 2</p>
-      <p ng-if="newQuote.author.length > 32"> Greater than 32</p>
-    </div>
-
-  </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-3">
-      <label>Message: </label>
-    </div>
-    <div class="col-xs-9">
-      <input type="text" name="message" ng-model="newQuote.message" ng-minlength="2" required>
-
-      <div>
-      <p ng-if="newQuote.message.length < 2"> Less than 2</p>
-    </div>
+    <div class="errors" ng-show="!myForm.author.$pristine">
+      <p class="error" ng-if="myForm.author.$viewValue.length < 2"> Less than two</p>
+      <p class="error" ng-if="myForm.author.$viewValue.length > 32"> Greater than 32</p>
     </div>
   </div>
-<input type="submit">
+</div>
+<div class="row">
+  <div class="col-xs-3">
+    <label>Message: </label>
+  </div>
+  <div class="col-xs-9">
+    <input type="text" name="message" ng-model="newQuote.message" ng-minlength="2" required>
+    <div class="errors" ng-show="!myForm.message.$pristine">
+      <p class="error" ng-if="myForm.message.$viewValue.length < 2"> Less than two</p>
+    </div>
+  </div>
+</div>
+<input ng-if="myForm.$valid" type="submit">

@@ -22,7 +22,6 @@ app.controller('QuotesCtrl', ["$scope", function($scope) {
   };
 
   $scope.submitForm = function(form) {
-  
     if (form.$valid) {
     $scope.quotes.push({author: $scope.newQuote.author,
                         message: $scope.newQuote.message});
@@ -151,3 +150,43 @@ app.directive('hover', [function(){
     link: linkCallback
   };
 }]);
+
+app.controller('ScopesCtrl', ['$scope', '$window', function($scope, $window){
+  $scope.twoWay = 'andur';
+  $scope.oneWay = 'cars';
+
+  $scope.hello = function(name){
+    $window.alert('Hello, ' + name);
+  };
+}]);
+
+app.directive('isolated', [function(){
+
+  var callbackFunc = function(scope){
+    scope.oneWay = "morgan";
+    scope.twoWay = "adrian";
+    scope.sayHello = function(name) {
+      console.log('Hello ' + name + 'from iso scope');
+    }
+  };
+
+  return {
+    templateUrl: 'isolated.html',
+    restrict: 'A',
+    scope: {
+      oneWay: "@",
+      twoWay: "=",
+      sayHello: "&"
+    },
+    link: callbackFunc
+  };
+
+}]);
+
+
+
+
+
+
+
+
