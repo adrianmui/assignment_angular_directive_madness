@@ -5,7 +5,7 @@
   <div class="col-xs-9">
     <input type="text" name="author" ng-model="newQuote.author" ng-minlength="2" ng-maxlength="32" required>
     <div>
-      <p ng-if="myForm.$dirty || (newQuote.author.length < 2)"> Less than 2</p>
+      <p ng-if="newQuote.author.length < 2)"> Less than 2</p>
       <p ng-if="newQuote.author.length > 32"> Greater than 32</p>
     </div>
 
