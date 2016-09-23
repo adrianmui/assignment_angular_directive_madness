@@ -9,40 +9,32 @@
   </head>
   <body>
 
-    <form quote-form ng-controller="QuotesCtrl">
-
-      <div class="row">
-        <div class="col-xs-3">
-
-          <label>Author: </label>
+    <div ng-controller="QuotesCtrl">
+      <form quote-form ng-submit="submitForm()">
+        <div class="row">
+          <div class="col-xs-3">
+            <label>Author: </label>
+          </div>
+          <div class="col-xs-9">
+            <input type="text" name="author" ng-model="newQuote.author">
+          </div>
         </div>
-        <div class="col-xs-9">
-
-          <input type="text" name="author"> 
+        <div class="row">
+          <div class="col-xs-3">
+            <label>Message: </label>
+          </div>
+          <div class="col-xs-9">
+            <input type="text" name="message" ng-model="newQuote.message">
+          </div>
         </div>
+        <input type="submit">
+      </form>
+
+      <p ng-if="(quotes.length == 0)">THERE ARE NO QUOTES HERE</p>
+      <div ng-repeat="quote in quotes">
+        <quotes-index></quotes-index>
       </div>
-
-      <div class="row">
-        <div class="col-xs-3">
-
-          <label>Message: </label>
-        </div>
-        <div class="col-xs-9">
-
-           <input type="text" name="message">
-        </div>
-      </div>
-      <input type="submit" ng-model="submitForm()">
-    </form>
-
-    <div quotes-index ng-repeat="quote in quotes">
-
-
     </div>
-
-
-
-
 
     <copyright>
       Morgan && Adrian

@@ -8,22 +8,38 @@ app.controller('FormCtrl', ["$scope", function($scope) {
 }]);
 
 app.controller('QuotesCtrl', ["$scope", function($scope) {
-  
-  
-   
 
+  $scope.quotes = [];
+  $scope.newQuote = {author: '', message: ''};
+  console.log($scope.quotes.length);
 
+  $scope.deleteQuote = function(quote) {
+    for(var i in $scope.quotes){
+      if(quote === $scope.quotes[i]){
+        $scope.quotes.splice(i,1);
+      }
+    }
+  };
+
+  $scope.submitForm = function() {
+    $scope.quotes.push({author: $scope.newQuote.author,
+                        message: $scope.newQuote.message});
+    $scope.newQuote.author = '';
+    $scope.newQuote.message = '';
+    console.log($scope.quotes);
+  };
 }]);
 
 app.directive('quotesIndex', [function(){
 
-  var linkCallback = function (scope, element, attributes){
-  };
+  // var linkCallback = function (scope, element, attributes){
+
+  // };
 
   return {
-    restrict: 'A',
-    scope: true,
-    link: linkCallback
+    templateUrl: 'quote.html',
+    restrict: 'E',
+    scope: true
   };
 }]);
 
@@ -73,9 +89,6 @@ app.directive('colorize', [function(){
       background: '@'
     },
     link: linkCallback
-    // link: function(scope, element, attributes) {
-    //   linkCallback(scope, element, attributes);
-    // }
   };
 }]);
 
