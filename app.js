@@ -21,12 +21,29 @@ app.controller('QuotesCtrl', ["$scope", function($scope) {
     }
   };
 
-  $scope.submitForm = function() {
+  $scope.submitForm = function(form) {
+  
+    if (form.$valid) {
     $scope.quotes.push({author: $scope.newQuote.author,
                         message: $scope.newQuote.message});
     $scope.newQuote.author = '';
     $scope.newQuote.message = '';
-    console.log($scope.quotes);
+
+    form.$setPristine();
+    form.$setUntouched();
+
+    console.log('Morgan says it\'s valid');
+    } else {
+    console.log('Morgan says it\'s invalid');
+    }
+  };
+}]);
+
+app.directive('quotesForm', [function(){
+  return {
+    templateUrl: 'quote-form.html',
+    restrict: 'A',
+    scope: true
   };
 }]);
 
