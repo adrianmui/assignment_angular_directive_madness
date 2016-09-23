@@ -3,6 +3,7 @@
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="app.js"></script>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <main-nav>
@@ -11,6 +12,11 @@
     <main-header>
       Morgan has a lvl 69. Charizard
     </main-header>
+
+    <p colorize>Stuff</p>
+
+    <button mouse>I'm clickable</button>
+    <!-- <p hover>DONT HOVER ME</p> -->
 
     <form ng-controller="formHandler">
       <p ng-if="!(rval)">No number is selected.</p>
@@ -25,5 +31,9 @@
 
       <button ng-click="check()"> but</button>
     </form>
+
+    <copyright>
+      Morgan && Adrian
+    </copyright>
   </body>
 </html>
