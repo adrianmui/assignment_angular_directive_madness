@@ -19,7 +19,8 @@
       <input type="text" ng-model="oneWay" name="oneWay">
 
       <form isolated 
-        ng-submit="hello(formerino.oneWay.$viewValue)" one-way="{{oneWay}}" 
+        ng-submit="hello(oneWay)" 
+        one-way="{{oneWay}}" 
         two-way="twoWay"
         say-hello="sayHello"
         name="formerino"></form>
